@@ -1,0 +1,136 @@
+body {
+  margin: 0;
+}
+
+.youtube__logo i {
+  color: red;
+}
+
+.view {
+  height: 34px;
+  background-color: black;
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+.menu {
+  position: absolute;
+  right: 32px;
+}
+.video video {
+  width: 100%;
+  height: 300px;
+  padding: 10px;
+}
+
+.subscribe img {
+  width: 30px;
+  height: 30px;
+}
+
+.tag {
+  list-style: none;
+  display: flex;
+  width: 180px;
+  justify-content: space-around;
+  align-items: center;
+  height: 20px;
+}
+.tag a {
+  text-decoration: none;
+  color: blue;
+}
+
+.video__title {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  padding: 10px;
+}
+
+.video__title h3 {
+  margin: 0;
+}
+
+.video__title i {
+  position: absolute;
+  right: 32px;
+}
+
+.coment {
+  font-size: 13px;
+  padding: 10px;
+}
+
+.video__menu {
+  display: flex;
+  align-items: center;
+  height: 50px;
+  font-size: 40px;
+  list-style: none;
+  justify-content: space-between;
+  margin: 20px;
+  padding: 30px;
+  border-bottom: 2px solid gray;
+}
+
+.video__menu a {
+  color: black;
+}
+.video__menu a:hover {
+  color: red;
+}
+
+.subscribe {
+  padding: 10px;
+  margin: 10px;
+  display: flex;
+  align-items: center;
+}
+.subscribe b {
+  padding: 10px;
+}
+
+.subscribe span {
+  position: absolute;
+  right: 32px;
+}
+
+.videolist b {
+  padding: 10px;
+  height: 30px;
+  margin: 30px;
+}
+.videolist img {
+  width: 150px;
+  height: 100px;
+}
+.videolist li {
+  list-style: none;
+  padding: 10px;
+  margin: 10px;
+}
+
+.play {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+}
+
+.list__1 {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+.list__2 {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+.list__3 {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
