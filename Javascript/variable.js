@@ -1,7 +1,7 @@
 // 1. Use strict
 'use strict;'
 
-// 2. Variable, rw(read/write)
+// 2. Variable, rw (read/write)
 // let
 let name = 'yoochan';
 console.log(name);
