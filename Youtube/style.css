@@ -2,6 +2,10 @@ body {
   margin: 0;
 }
 
+* {
+  font-family: "Rubik", sans-serif;
+}
+
 .youtube__logo i {
   color: red;
 }
@@ -36,6 +40,7 @@ body {
   justify-content: space-around;
   align-items: center;
   height: 20px;
+  margin: 10px;
 }
 .tag a {
   text-decoration: none;
@@ -67,7 +72,7 @@ body {
   display: flex;
   align-items: center;
   height: 50px;
-  font-size: 40px;
+  font-size: 30px;
   list-style: none;
   justify-content: space-between;
   margin: 20px;
@@ -87,14 +92,17 @@ body {
   margin: 10px;
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
-.subscribe b {
-  padding: 10px;
+.subscribe .profile {
+  display: flex;
+  align-items: center;
 }
 
-.subscribe span {
-  position: absolute;
-  right: 32px;
+.subscribe .subscribe__btn {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 15px;
 }
 
 .videolist b {
@@ -116,7 +124,13 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 30px;
+  padding: 10px;
+}
+
+.play b {
+  margin: 0;
+  padding: 0;
+  display: flex;
 }
 
 .list__1 {
