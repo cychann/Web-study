@@ -1,2 +1,2 @@
 # Web Studying
-Space to practice while studying web / Front-end practice
+Space to practice while studying web / Front-end study
