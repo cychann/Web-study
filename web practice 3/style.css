@@ -1,0 +1,168 @@
+:root {
+  /* Size */
+  --side-padding: 12px;
+  --image-size: 300px;
+
+  /* font size */
+  --font-lagee: 18px;
+  --font-medium: 14px;
+  --font-small: 12px;
+  --font-micro: 10px;
+
+  /* font */
+  --font-Jua: "Jua", sans-serif;
+  --font-Roboto: "Bitter", serif;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/**/
+header {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-Jua);
+  padding: var(--side-padding);
+  align-items: center;
+}
+header a {
+  text-decoration: none;
+  color: black;
+}
+header .logo {
+  font-size: 60px;
+}
+header ul {
+  display: flex;
+  list-style: none;
+  justify-content: space-between;
+  width: 300px;
+  font-size: 15px;
+}
+
+/**/
+.intro {
+  padding: var(--side-padding);
+  margin: 30px;
+}
+.intro .selfintro {
+  font-family: var(--font-Roboto);
+  font-size: 30px;
+  padding: var(--side-padding);
+}
+.intro .ui {
+  font-size: 20px;
+  padding: var(--side-padding);
+}
+.intro .ui a {
+  text-decoration: none;
+  color: red;
+}
+
+/**/
+.main__text {
+  padding: var(--side-padding);
+}
+.main__text .hobby {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.main__text .hobby img {
+  width: var(--image-size);
+  height: var(--image-size);
+  padding: var(--side-padding);
+}
+.main__text li {
+  display: flex;
+  padding: 40px;
+  border-top: 1px solid gray;
+  border-width: 30%;
+  width: 844px;
+}
+.main__text .hobby p {
+  padding: var(--side-padding);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 450px;
+  font-size: 20px;
+}
+.main__text .hobby a {
+  color: red;
+}
+.main__text .hobby #last {
+  border-bottom: 1px solid gray;
+  padding-bottom: 40px;
+  margin-bottom: 30px;
+}
+.main__text .More {
+  font-size: 20px;
+  padding-left: 100px;
+}
+.main__text .More a {
+  text-decoration: none;
+  color: red;
+}
+
+/**/
+.end {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--side-padding);
+  border-top: 1px solid gray;
+  margin-top: 60px;
+}
+.end .twitter {
+  display: flex;
+  align-items: center;
+}
+.end .twitter img {
+  width: 30px;
+  height: 30px;
+}
+.end .twitter a {
+  text-decoration: none;
+  color: red;
+  font-family: var(--font-Jua);
+  display: flex;
+  align-items: center;
+}
+.end .unit {
+  font-size: 13px;
+  width: 200px;
+  display: flex;
+  justify-content: space-between;
+}
+.end .unit a {
+  text-decoration: none;
+  color: red;
+  font-family: var(--font-Jua);
+}
+
+@media screen and (max-width: 768px) {
+  .main__text li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .main__text .hobby img {
+    width: 500px;
+    height: 500px;
+  }
+  .end {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .end .unit {
+    display: flex;
+    flex-direction: column;
+    padding: var(--side-padding);
+  }
+}
