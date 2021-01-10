@@ -67,6 +67,9 @@ a {
     justify-content: center;
     width: 100%;
   }
+  #sns a {
+    padding: 8px;
+  }
   .navbar__btn {
     display: block;
   }
