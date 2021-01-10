@@ -3,77 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Youtube mobile   </title>
-    <link rel="preconnect" href="https://fonts.gstatic.com"> 
-<link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
+    <title>Youtube</title>
     <link rel = "stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/d736d670df.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <!-- Header-->
-    <div class="view">
-        <div class="youtube__logo">
+    <!-- navbar -->
+    <section id="navbar">
+        <a href="#"><div class="navbar__logo">
             <i class="fab fa-youtube"></i>
-            <span>Youtube</span>
-        </div>
-        <div class="menu">
+            <span class="youtube">Youtube</span>
+        </div></a>
+        <div class="navbar__icon">
             <i class="fas fa-search"></i>
-            <i class="far fa-ellipsis-v"></i>
+            <i class="fas fa-ellipsis-v"></i>
         </div>
-    </div>
-
-    <!--video -->
-    <div class="video">
-        <video src="30868aa33afa4260b78f0dcfb9d4e08b.mov" controls></video>
-    </div>
-
-    <!--video info -->
-    <div class="information">
-        <div class="tag">
-            <a href=""><li>#sichu</li></a>
-            <a href=""><li>#ddung</li></a>
-            <a href=""><li>#cute</li></a>
+    </section>
+    <!-- video -->
+    <section id="video">
+        <video src="img/video1.mov" controls></video>
+    </section>
+    <!-- infoandupnext -->
+    <section class="infoAndUpnext">
+            <!-- video description -->
+    <secion id="viedo__description">
+        <div class="hashtag">
+            <a href="#"><span>#Yoochan's pet</span></a>
+            <a href="#"><span>#Dog</span></a>
+            <a href="#"><span>#Shih Tzu</span></a>
         </div>
         <div class="video__title">
-            <h3>2020/12/27 아침 10시 뚱이 자는 영상 얼굴도 안보이고 아주 쿡박혀 잘잔다...</h3>
-            <a href=""><i class="fas fa-caret-down"></i></a>
+            <span class="title">Cute Puppy: 뚱이 자는 중</span>
+            <i class="fas fa-caret-down"></i>
         </div>
-        <div class="count"></div>
-            <span class="coment">1M views 1 month ago</span>
+        <div class="view">
+            <span>1M views 1 month ago</span>
         </div>
-        <div class="video__menu">
-            <a href=""><li><i class="fas fa-thumbs-up"></i></li></a>
-            <a href=""><li><i class="fas fa-thumbs-down"></i></li></a>
-            <a href=""><li><i class="fas fa-share"></i></li></a>
-            <a href=""><li><i class="fas fa-plus"></i></li></a>
-            <a href=""><li><i class="fas fa-flag"></i></li></a>
+        <div class="comment__item">
+            <div class="item">
+                <a href=""><li><i class="fas fa-thumbs-up"></i></li></a>
+                <span>1K</span>
+            </div>
+            <div class="item">
+                <a href=""><li><i class="fas fa-thumbs-down"></i></li></a>
+                <span>0</span>
+            </div>
+            <div class="item">
+                <a href=""><li><i class="fas fa-share"></i></li></a>
+                <span>Share</span>
+            </div>
+            <div class="item">
+                <a href=""><li><i class="fas fa-plus"></i></li></a>
+                <span>Save</span>
+            </div>
+            <div class="item">
+                <a href=""><li><i class="fas fa-flag"></i></li></a>
+                <span>Report</span>
+            </div>
         </div>
         <div class="subscribe">
-            <div class="profile">
-                <img src="IMG_6323.jpeg">
-                <b>최뚱</b>
+            <div class="user">
+                <img src="img/IMG_6323.jpeg">
+                <div class="user__info">
+                    <div class="user__name">Yoochan</div>
+                    <span>1M subscribers</span>
+                </div>
             </div>
-            <button class="subscribe__btn">SUBSCRIBE</button>
-        </>
-    </div>
-    <div class="videolist">
-        <div class="play">
-            <b>up next</b>
-            <div class="list__1">
-                <a href=""><li><img src="IMG_6160.jpeg"></li></a>
-                <span>뚱이 친구1 순딩한 호설이</span> 
+            <div class="subscribe__btn">
+                <a href="">SUBSCRIBE</a>
             </div>
-            <div class="list__2">
-                <a href=""><li><img src="IMG_6178.jpeg"></li></a>
-                <span>뚱이 친구2 뚱이의 베스트프렌트 옆집 귀요미 두부</span>
-            </div>
-            <div class="list__3">
-                <a href=""><li><img src="IMG_6191.jpeg"></li></a>
-                <span>뚱이 누가보면 사람인줄 알겠다</span>
-            </div>
-    </div>
+        </div>
+    </secion>
+    <!-- Up next -->
+    <section id="up__next">
+        <span class="upnext">Up next</span>
+        <ul class="video__list">
+            <li class="list">
+                <img src="img/IMG_6160.jpeg" alt="">
+                <span class="img__description">호설이: An innocent dog who loves people very much. Don't have never barked and are always pretty</span>
+                <i class="fas fa-ellipsis-v"></i>
+            </li>
+            <li class="list">
+                <img src="img/IMG_6178.jpeg" alt="">
+                <span class="img__description">두부: A cute bichon. Very cute frined who walks very quickly and always craves snacks when he comes to my house</span>
+                <i class="fas fa-ellipsis-v"></i>
+            </li>
+            <li class="list">
+                <img src="img/IMG_6191.jpeg" alt="">
+                <span class="img__description">뚱이: It's the youngest in my house, Sichu. Pack of love. All things seem to go well with the luck of 뚱 coming into my house</span>
+                <i class="fas fa-ellipsis-v"></i>
+            </li>
+        </ul>
+    </section>
+    </section>
 
-    
-    
 </body>
 </html>
