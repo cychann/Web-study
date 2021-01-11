@@ -12,12 +12,30 @@
   /* font */
   --font-Jua: "Jua", sans-serif;
   --font-Roboto: "Bitter", serif;
+  --font-imbue: "Imbue", serif;
+  --font-sans: "Open Sans", sans-serif;
+
+  /* Color */
+  --color-blue: #304ffe;
+  --color-black: #000000;
+  --color-white: #ffffff;
+  --color-red: #d50000;
+  --color-light-grey: #7c7979;
+  --color-dark-red: #8b0000;
+
+  /* animation */
+  --animation-duration: 500ms;
 }
 
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: var(--font-sans);
+}
+
+a {
+  text-decoration: none;
 }
 
 /**/
@@ -31,6 +49,11 @@ header {
 header a {
   text-decoration: none;
   color: black;
+}
+
+header a:hover {
+  color: var(--color-red);
+  transition: all var(--animation-duration);
 }
 header .logo {
   font-size: 60px;
@@ -49,17 +72,29 @@ header ul {
   margin: 30px;
 }
 .intro .selfintro {
-  font-family: var(--font-Roboto);
+  font-family: var(--font-imbue);
   font-size: 30px;
   padding: var(--side-padding);
+}
+
+.intro .selfintro a {
+  color: var(--color-red);
+}
+.intro .selfintro a:hover {
+  color: var(--color-dark-red);
+  transition: all var(--animation-duration);
 }
 .intro .ui {
   font-size: 20px;
   padding: var(--side-padding);
 }
 .intro .ui a {
-  text-decoration: none;
-  color: red;
+  color: var(--color-red);
+  transition: all var(--animation-duration);
+}
+
+.intro .ui a:hover {
+  color: var(--color-dark-red);
 }
 
 /**/
@@ -85,16 +120,20 @@ header ul {
 }
 .main__text .hobby p {
   padding: var(--side-padding);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
+  padding-top: 100px;
   width: 450px;
   font-size: 20px;
 }
 .main__text .hobby a {
   color: red;
+  text-decoration: underline;
 }
+
+.main__text .hobby a:hover {
+  color: var(--color-dark-red);
+  transition: all var(--animation-duration);
+}
+
 .main__text .hobby #last {
   border-bottom: 1px solid gray;
   padding-bottom: 40px;
@@ -102,7 +141,7 @@ header ul {
 }
 .main__text .More {
   font-size: 20px;
-  padding-left: 100px;
+  padding-left: 70px;
 }
 .main__text .More a {
   text-decoration: none;
@@ -117,6 +156,7 @@ header ul {
   padding: var(--side-padding);
   border-top: 1px solid gray;
   margin-top: 60px;
+  font-family: var(--font-Jua);
 }
 .end .twitter {
   display: flex;
@@ -129,20 +169,15 @@ header ul {
 .end .twitter a {
   text-decoration: none;
   color: red;
-  font-family: var(--font-Jua);
   display: flex;
   align-items: center;
 }
-.end .unit {
-  font-size: 13px;
-  width: 200px;
+
+.Contact {
+  width: 350px;
   display: flex;
   justify-content: space-between;
-}
-.end .unit a {
-  text-decoration: none;
-  color: red;
-  font-family: var(--font-Jua);
+  color: var(--color-light-grey);
 }
 
 @media screen and (max-width: 768px) {
@@ -160,7 +195,7 @@ header ul {
     flex-direction: column;
     align-items: flex-start;
   }
-  .end .unit {
+  .end .Contact {
     display: flex;
     flex-direction: column;
     padding: var(--side-padding);
