@@ -73,7 +73,7 @@ header ul {
 }
 .intro .selfintro {
   font-family: var(--font-imbue);
-  font-size: 30px;
+  font-size: 25px;
   padding: var(--side-padding);
 }
 
@@ -111,6 +111,12 @@ header ul {
   height: var(--image-size);
   padding: var(--side-padding);
 }
+
+.main__text .hobby img:hover {
+  transform: scale(1.1);
+  transition: all var(--animation-duration);
+}
+
 .main__text li {
   display: flex;
   padding: 40px;
@@ -139,6 +145,11 @@ header ul {
   padding-bottom: 40px;
   margin-bottom: 30px;
 }
+
+.main__text .hobby span {
+  color: var(--color-light-grey);
+}
+
 .main__text .More {
   font-size: 20px;
   padding-left: 70px;
