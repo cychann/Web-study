@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coordinates</title>
+    <style>
+        .box {
+            background-color: antiquewhite;
+            width: 100px;
+            height: 100px;
+            margin: 30px;
+        }
+        .box__select {
+            background-color: brown;
+            width: 100px;
+            height: 100px;
+            margin: 30px;
+        }
+
+        .button {
+            position: fixed;
+            right: 3px;
+            top: 3px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box__select" ></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="button">
+        <button class="scroll__by">Scroll by 100px(y)</button>
+        <button class="scroll__to">Scroll to 100px(y)</button>
+        <button class="scroll__select" data-link=".box__select">Scroll into select</button>
+    </div>
+    <script>
+        const box = document.querySelector('.box__select');
+        const Rect = box.getBoundingClientRect();
+        box.addEventListener('click', (event) => {
+            console.log(Rect);
+            console.log(`client: ${event.clientX}, ${event.clientY}`);
+            console.log(`page: ${event.pageX}, ${event.pageY}`)
+        })
+        
+        const scrollby = document.querySelector('.scroll__by');
+        const scrollto = document.querySelector('.scroll__to');
+        const scrollinto = document.querySelector('.scroll__select');
+
+        scrollby.addEventListener('click', () => {
+            window.scrollBy(0, 100);
+        })
+        scrollto.addEventListener('click', () => {
+            window.scrollTo(0, 100);
+        })
+        scrollinto.addEventListener('click', ()=> {
+            box.scrollIntoView();   
+        })
+    </script>
+</body>
+</html>
+
+<!-- 
+    getBoundingClientRect() : 해당 element의 크기나 위치와 같은 정보들을 불러오는 함수
+    client x,y : 해당 화면 내에서의 x,y 위치
+    page x,y : 페이지 전체 내애세의 x,y 위치
+
+    scrollby : 주어진 화면에서 얼마만큼 스크롤
+    scorllTo : 해당 위치에 해당하는 곳으로 스크롤
+    scrollIntoView() : 해당 element에 해당하는 곳으로 스크롤
+ -->
