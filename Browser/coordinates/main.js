@@ -15,6 +15,8 @@ function resultmove(x) {
 
     document.getElementById('pixel').style.left = positionleft +70 + "px";
     document.getElementById('pixel').style.top = positiontop +100 + "px";
+    document.getElementById('horo').style.top = positiontop + 60 +"px";
+    document.getElementById('verti').style.left = positionleft + 60+ "px";
 }
 
 document.addEventListener('mousemove', resultmove);
