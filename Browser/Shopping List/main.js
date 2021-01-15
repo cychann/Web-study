@@ -19,6 +19,8 @@ function additem() {
     AddList.innerHTML += "<i class='fas fa-trash-alt' onclick='removeitem("+cnt+")'></i>";
     list.append(AddList);
     cnt++;
+    input.value = '';
+    input.focus();
 }
 
 function removeitem(cnt) {
