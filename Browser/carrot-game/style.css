@@ -1,0 +1,54 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: black;
+  text-align: center;
+  margin: 0;
+}
+
+.background {
+  background-image: url(carrot/img/background.png);
+  background-repeat: no-repeat;
+  background-size: 700px;
+  width: 700px;
+  height: 500px;
+  margin: auto;
+  margin-top: 100px;
+  border-radius: 20px;
+}
+
+.game__btn {
+  background-color: antiquewhite;
+  font-size: 20px;
+  padding: 8px;
+  margin: 8px;
+  border-radius: 10px;
+}
+
+.timer {
+  background-color: white;
+  color: black;
+  width: 100px;
+  height: 30px;
+  font-size: 20px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  border: 2px solid black;
+}
+
+.carrot__left {
+  background-color: orange;
+  color: white;
+  width: 40px;
+  height: 40px;
+  font-size: 35px;
+  border-radius: 50%;
+  margin: auto;
+  margin-top: 5px;
+  border: 2px solid black;
+}
