@@ -18,3 +18,15 @@ function random__postion(item) {
     item.style.top = `${randomTop}px`;
     item.style.left = `${randomLeft}px`;
 }
+
+let state = 0;
+function change__playBtn() {
+    if(state == 0) {
+        state = 1;
+        document.querySelector('#play__btn').className = "fas fa-pause";
+    }
+    else {
+        state = 0;
+        document.querySelector('#play__btn').className = "fas fa-play";
+    }
+}
