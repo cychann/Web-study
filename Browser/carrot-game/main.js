@@ -1,8 +1,14 @@
-var carrot = document.querySelector('.carrot');
-var start__btn = document.querySelector('.game__btn');
+const start__btn = document.querySelector('.game__btn');
+const carrots = document.querySelectorAll('.carrot');
+const bugs = document.querySelectorAll('.bug');
 
 start__btn.addEventListener('click', () => {
-    random__postion(carrot);
+    carrots.forEach( (carrot) => {
+        random__postion(carrot);
+    });
+    bugs.forEach( (bug) => {
+        random__postion(bug);
+    })
 })
 
 function random__postion(item) {
