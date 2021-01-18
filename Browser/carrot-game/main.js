@@ -1,14 +1,16 @@
-const play__btn = document.querySelector('#play__btn');
+const playBtn = document.querySelector('#play__btn');
 const carrots = document.querySelectorAll('.carrot');
 const bugs = document.querySelectorAll('.bug');
 const timer = document.querySelector('.timer');
+const carrotLeft = document.querySelector('.carrot__left');
 
 let state = 0;
 
 
-play__btn.addEventListener('click', () => {
+playBtn.addEventListener('click', () => {
     countTime();
     change__playBtn();
+    carrot__left();
     carrots.forEach( (carrot) => {
         random__postion(carrot);
         state__item(carrot);
@@ -21,7 +23,7 @@ play__btn.addEventListener('click', () => {
 
 function random__postion(item) {
     randomTop = Math.floor(Math.random()*123 + 277);
-    randomLeft = Math.floor(Math.random()*650 + 100);
+    randomLeft = Math.floor(Math.random()*630 + 100);
     item.style.position = 'absolute';
     item.style.top = `${randomTop}px`;
     item.style.left = `${randomLeft}px`;
@@ -51,11 +53,12 @@ function countTime() {
     let seconds = 0;
     let count = 0;
     let display__seconds = 0;
+    let timeSet = 10;
     if(state == 0) {
         time = setInterval(function() {
             count += 1;
             seconds = Math.floor((count)% 6000 / 100);
-            display__seconds = 3-seconds;
+            display__seconds = timeSet - seconds;
             timer.innerHTML = `0 : ${display__seconds}`; 
             if(display__seconds <= 0 ) {
                 clearInterval(time);
@@ -63,11 +66,16 @@ function countTime() {
         }, 10);
     }
     if(state == 1) {
-        time__reset();
+        clearInterval(time);
+        timer.innerHTML = '00:00';
     }
 }
 
-function time__reset() {
-    clearInterval(time);
-    timer.innerHTML = '00:00';
+function carrot__left() {
+    if(state == 1){
+        carrotLeft.innerHTML = `${carrots.length}`
+    }
+    else {
+        carrotLeft.innerHTML = '0';
+    }
 }
