@@ -56,3 +56,11 @@ body {
 .items {
   margin-top: 50px;
 }
+
+.carrot {
+  display: none;
+}
+
+.bug {
+  display: none;
+}
