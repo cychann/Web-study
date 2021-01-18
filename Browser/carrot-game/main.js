@@ -5,9 +5,11 @@ const bugs = document.querySelectorAll('.bug');
 start__btn.addEventListener('click', () => {
     carrots.forEach( (carrot) => {
         random__postion(carrot);
+        state__item(carrot);
     });
     bugs.forEach( (bug) => {
         random__postion(bug);
+        state__item(bug);
     })
 })
 
@@ -28,5 +30,14 @@ function change__playBtn() {
     else {
         state = 0;
         document.querySelector('#play__btn').className = "fas fa-play";
+    }
+}
+
+function state__item(item) {
+    if(state === 0) {
+        item.style.display = 'none';
+    }
+    else {
+        item.style.display = 'block';
     }
 }
