@@ -1,8 +1,10 @@
-const start__btn = document.querySelector('.game__btn');
+const play__btn = document.querySelector('#play__btn');
 const carrots = document.querySelectorAll('.carrot');
 const bugs = document.querySelectorAll('.bug');
 
-start__btn.addEventListener('click', () => {
+play__btn.addEventListener('click', () => {
+    change__playBtn();
+    
     carrots.forEach( (carrot) => {
         random__postion(carrot);
         state__item(carrot);
