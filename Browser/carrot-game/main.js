@@ -127,27 +127,3 @@ function removeCarrot() {
         })
     }
 }
-
-function init() {
-    const item = document.createElement('div');
-    item.setAttribute('class', 'items')
-    item.innerHTML = `
-        <img src="carrot/img/carrot.png" class="carrot">
-        <img src="carrot/img/carrot.png" class="carrot">
-        <img src="carrot/img/carrot.png" class="carrot">
-            <img src="carrot/img/carrot.png" class="carrot">
-            <img src="carrot/img/carrot.png" class="carrot">
-            <img src="carrot/img/carrot.png" class="carrot">
-            <img src="carrot/img/carrot.png" class="carrot">
-            <img src="carrot/img/carrot.png" class="carrot">
-            <img src="carrot/img/carrot.png" class="carrot">
-            <img src="carrot/img/carrot.png" class="carrot">
-            <img src="carrot/img/bug.png" class="bug">
-            <img src="carrot/img/bug.png" class="bug">
-            <img src="carrot/img/bug.png" class="bug">
-            <img src="carrot/img/bug.png" class="bug">
-            <img src="carrot/img/bug.png" class="bug">
-            <img src="carrot/img/bug.png" class="bug">
-    `
-    return item;
-}
