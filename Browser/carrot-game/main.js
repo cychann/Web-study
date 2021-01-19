@@ -27,6 +27,7 @@ playBtn.addEventListener('click', () => {
         state__item(carrot);
         carrot.addEventListener('click', () => {
             carrot__pull.play();
+            carrot__pull.currentTime = 0;
             carrots.splice(carrots.indexOf(carrot),1);
             carrot.remove();
             carrot__left();
