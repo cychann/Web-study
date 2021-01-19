@@ -6,30 +6,56 @@ const bugs = document.querySelectorAll('.bug');
 const timer = document.querySelector('.timer');
 const carrotLeft = document.querySelector('.carrot__left');
 const back = document.querySelector('.background');
+const result = document.querySelector('.result');
+const ending = document.querySelector('.ending');
+const replay = document.querySelector('.replay');
+const bgm = document.querySelector('.bgm');
+const bug__pull = document.querySelector('.bug__pull');
+const carrot__pull = document.querySelector('.carrot__pull');
+const game_win = document.querySelector('.game_win');
 
 playBtn.addEventListener('click', () => {
     if(state == 1) {
         window.location.reload();
     }
+    bgm.play();
     countTime();
     change__playBtn();
+    carrot__left();
     carrots.forEach( (carrot) => {
         random__postion(carrot);
         state__item(carrot);
         carrot.addEventListener('click', () => {
+            carrot__pull.play();
             carrots.splice(carrots.indexOf(carrot),1);
             carrot.remove();
-            console.log(carrots.length);
             carrot__left();
+            if(carrots.length == 0) {
+                game_win.play();
+                ending.style.display = "block";
+                result.innerHTML = "You Win!!";
+                clearInterval(time);
+            }
 
         })
     });
     bugs.forEach( (bug) => {
         random__postion(bug);
         state__item(bug);
-        carrot__left();
+        bug.addEventListener('click', () => {
+            bug__pull.play();
+            clearInterval(time);
+            ending.style.display = "block";
+            result.innerHTML = "You lost...";
+        })
     })
 })
+
+replay.addEventListener('click', () => {
+    window.location.reload();
+})
+
+
 
 function random__postion(item) {
     randomTop = Math.floor(Math.random()*123 + 277);
@@ -105,7 +131,9 @@ function init() {
     const item = document.createElement('div');
     item.setAttribute('class', 'items')
     item.innerHTML = `
-    <img src="carrot/img/carrot.png" class="carrot">
+        <img src="carrot/img/carrot.png" class="carrot">
+        <img src="carrot/img/carrot.png" class="carrot">
+        <img src="carrot/img/carrot.png" class="carrot">
             <img src="carrot/img/carrot.png" class="carrot">
             <img src="carrot/img/carrot.png" class="carrot">
             <img src="carrot/img/carrot.png" class="carrot">
@@ -113,12 +141,6 @@ function init() {
             <img src="carrot/img/carrot.png" class="carrot">
             <img src="carrot/img/carrot.png" class="carrot">
             <img src="carrot/img/carrot.png" class="carrot">
-            <img src="carrot/img/carrot.png" class="carrot">
-            <img src="carrot/img/carrot.png" class="carrot">
-            <img src="carrot/img/bug.png" class="bug">
-            <img src="carrot/img/bug.png" class="bug">
-            <img src="carrot/img/bug.png" class="bug">
-            <img src="carrot/img/bug.png" class="bug">
             <img src="carrot/img/bug.png" class="bug">
             <img src="carrot/img/bug.png" class="bug">
             <img src="carrot/img/bug.png" class="bug">
