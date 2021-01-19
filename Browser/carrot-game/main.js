@@ -1,23 +1,29 @@
 const playBtn = document.querySelector('#play__btn');
-const carrots = document.querySelectorAll('.carrot');
+const items = document.querySelector('.items');
+const AllCarrots = document.querySelectorAll('.carrot');
+const carrots = Array.from(AllCarrots);
 const bugs = document.querySelectorAll('.bug');
 const timer = document.querySelector('.timer');
 const carrotLeft = document.querySelector('.carrot__left');
 
-let state = 0;
-
-
 playBtn.addEventListener('click', () => {
     countTime();
     change__playBtn();
-    carrot__left();
     carrots.forEach( (carrot) => {
         random__postion(carrot);
         state__item(carrot);
+        carrot.addEventListener('click', () => {
+            carrots.splice(carrots.indexOf(carrot),1);
+            carrot.remove();
+            console.log(carrots.length);
+            carrot__left();
+
+        })
     });
     bugs.forEach( (bug) => {
         random__postion(bug);
         state__item(bug);
+        carrot__left();
     })
 })
 
@@ -40,6 +46,7 @@ function change__playBtn() {
     }
 }
 
+let state = 0;
 function state__item(item) {
     if(state === 0) {
         item.style.display = 'none';
@@ -77,5 +84,15 @@ function carrot__left() {
     }
     else {
         carrotLeft.innerHTML = '0';
+    }
+}
+
+function removeCarrot() {
+    for(const carrot of carrots) {
+        carrot.addEventListener('click', () => {
+            carrot.remove();
+            console.log(carrot.length);
+            
+        })
     }
 }

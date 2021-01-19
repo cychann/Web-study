@@ -61,6 +61,14 @@ body {
   display: none;
 }
 
+.carrot:hover {
+  cursor: pointer;
+}
+
 .bug {
   display: none;
+}
+
+.bug:hover {
+  cursor: pointer;
 }
