@@ -5,8 +5,12 @@ const carrots = Array.from(AllCarrots);
 const bugs = document.querySelectorAll('.bug');
 const timer = document.querySelector('.timer');
 const carrotLeft = document.querySelector('.carrot__left');
+const back = document.querySelector('.background');
 
 playBtn.addEventListener('click', () => {
+    if(state == 1) {
+        window.location.reload();
+    }
     countTime();
     change__playBtn();
     carrots.forEach( (carrot) => {
@@ -95,4 +99,32 @@ function removeCarrot() {
             
         })
     }
+}
+
+function init() {
+    const item = document.createElement('div');
+    item.setAttribute('class', 'items')
+    item.innerHTML = `
+    <img src="carrot/img/carrot.png" class="carrot">
+            <img src="carrot/img/carrot.png" class="carrot">
+            <img src="carrot/img/carrot.png" class="carrot">
+            <img src="carrot/img/carrot.png" class="carrot">
+            <img src="carrot/img/carrot.png" class="carrot">
+            <img src="carrot/img/carrot.png" class="carrot">
+            <img src="carrot/img/carrot.png" class="carrot">
+            <img src="carrot/img/carrot.png" class="carrot">
+            <img src="carrot/img/carrot.png" class="carrot">
+            <img src="carrot/img/carrot.png" class="carrot">
+            <img src="carrot/img/bug.png" class="bug">
+            <img src="carrot/img/bug.png" class="bug">
+            <img src="carrot/img/bug.png" class="bug">
+            <img src="carrot/img/bug.png" class="bug">
+            <img src="carrot/img/bug.png" class="bug">
+            <img src="carrot/img/bug.png" class="bug">
+            <img src="carrot/img/bug.png" class="bug">
+            <img src="carrot/img/bug.png" class="bug">
+            <img src="carrot/img/bug.png" class="bug">
+            <img src="carrot/img/bug.png" class="bug">
+    `
+    return item;
 }
