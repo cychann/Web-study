@@ -1,8 +1,8 @@
 'use strict'
 
 const CARRIT_SIZE = 80;
-const CARROT_COUNT = 5;
-const BUG_COUNT = 5;
+const CARROT_COUNT = 10;
+const BUG_COUNT = 10;
 const GAME__DURATION_SEC = 5;
 
 const field = document.querySelector('.game__field');
@@ -82,6 +82,7 @@ function showStopButton() {
     const icon = gameBtn.querySelector('.fas');
     icon.classList.add('fa-stop');
     icon.classList.remove('fa-play');
+    gameBtn.style.visibility = 'visible';
 }
 
 function showTimerAndScroe() {
