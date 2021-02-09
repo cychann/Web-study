@@ -1,15 +1,15 @@
 'use strict';
 
 const CARROT_SIZE = 80;
-const CARROT_COUNT = 20;
-const BUG_COUNT = 20;
-const GAME_DURATION_SEC = 20;
 
 const field = document.querySelector('.game__field');
 const fieldRect = field.getBoundingClientRect();
 const gameBtn = document.querySelector('.game__button');
 const timerIndicator = document.querySelector('.game__timer');
 const gameScore = document.querySelector('.game__score');
+const gameLeveltnControl = document.querySelectorAll('.levelControl')
+const gameLevelBtn = document.querySelector('.game__level')
+const gameFactor = document.querySelector('.game__factor')
 
 const popUp = document.querySelector('.pop-up');
 const popUpText = document.querySelector('.pop-up__message');
@@ -20,22 +20,54 @@ const alertSound = new Audio('./sound/alert.wav');
 const bgSound = new Audio('./sound/bg.mp3');
 const bugSound = new Audio('./sound/bug_pull.mp3');
 const winSound = new Audio('./sound/game_win.mp3');
+const refreshSound = new Audio('./sound/refreshSound.mp3');
 
 let started = false;
 let score = 0;
 let timer = undefined;
+let carrot__count;
+let bug__count;
+let game__duration__sec;
 
 field.addEventListener('click', onFieldClick);
-gameBtn.addEventListener('click', () => {
-  if (started) {
-    stopGame();
-  } else {
+gameLeveltnControl.forEach((levelBtn) => {
+  levelBtn.addEventListener('click', (e) => {
+    switch(e.target.dataset.level) {
+      case '1':
+        carrot__count = 10
+        bug__count = 10
+        game__duration__sec = 10
+        break
+      case '2':
+         carrot__count = 10
+         bug__count = 10
+         game__duration__sec = 7
+         break
+      case '3':
+        carrot__count = 15
+        bug__count = 15
+        game__duration__sec = 10
+        break
+      case '4':
+        carrot__count = 20
+        bug__count = 20
+        game__duration__sec = 10
+        break
+    }
+    gameScreen();
     startGame();
-  }
-});
+  })
+})
+
+gameBtn.addEventListener('click', () => {
+  stopGame();
+})
+
 popUpRefresh.addEventListener('click', () => {
-  startGame();
+  resetGame()
+  initScreen();
   hidePopUp();
+  playSound(refreshSound)
 });
 
 function startGame() {
@@ -54,6 +86,7 @@ function stopGame() {
   showPopUpWithText('REPLAY❓');
   playSound(alertSound);
   stopSound(bgSound);
+  resetGame();
 }
 
 function finishGame(win) {
@@ -67,6 +100,16 @@ function finishGame(win) {
   stopGameTimer();
   stopSound(bgSound);
   showPopUpWithText(win ? 'YOU WON 🎉' : 'YOU LOST 💩');
+}
+
+function initScreen() {
+  gameFactor.classList.add('btn--hide')
+  gameLevelBtn.classList.remove('level--hide')
+}
+
+function gameScreen() {
+  gameFactor.classList.remove('btn--hide')
+  gameLevelBtn.classList.add('level--hide')
 }
 
 function showStopButton() {
@@ -86,12 +129,12 @@ function showTimerAndScore() {
 }
 
 function startGameTimer() {
-  let remainingTimeSec = GAME_DURATION_SEC;
+  let remainingTimeSec = game__duration__sec;
   updateTimerText(remainingTimeSec);
   timer = setInterval(() => {
     if (remainingTimeSec <= 0) {
       clearInterval(timer);
-      finishGame(score === CARROT_COUNT);
+      finishGame(score === carrot__count);
       return;
     }
     updateTimerText(--remainingTimeSec);
@@ -120,10 +163,15 @@ function hidePopUp() {
 function initGame() {
   score = 0;
   field.innerHTML = '';
-  gameScore.innerText = CARROT_COUNT;
+  gameScore.innerText = carrot__count;
   // 벌레와 당근을 생성한뒤 field에 추가해줌
-  addItem('carrot', CARROT_COUNT, 'img/carrot.png');
-  addItem('bug', BUG_COUNT, 'img/bug.png');
+  addItem('carrot', carrot__count, 'img/carrot.png');
+  addItem('bug', bug__count, 'img/bug.png');
+}
+
+function resetGame() {
+  score = 0;
+  field.innerHTML = '';
 }
 
 function onFieldClick(event) {
@@ -137,7 +185,7 @@ function onFieldClick(event) {
     score++;
     playSound(carrotSound);
     updateScoreBoard();
-    if (score === CARROT_COUNT) {
+    if (score === carrot__count) {
       finishGame(true);
     }
   } else if (target.matches('.bug')) {
@@ -155,7 +203,7 @@ function stopSound(sound) {
 }
 
 function updateScoreBoard() {
-  gameScore.innerText = CARROT_COUNT - score;
+  gameScore.innerText = carrot__count - score;
 }
 
 function addItem(className, count, imgPath) {
