@@ -1,6 +1,6 @@
 'use strict';
 
-const CARROT_SIZE = 80;
+const ITEM__SIZE = 80;
 
 const field = document.querySelector('.game__field');
 const fieldRect = field.getBoundingClientRect();
@@ -27,30 +27,50 @@ let score = 0;
 let timer = undefined;
 let carrot__count;
 let bug__count;
+let fire__count;
 let game__duration__sec;
+let fireLeft = undefined;
 
 field.addEventListener('click', onFieldClick);
 gameLeveltnControl.forEach((levelBtn) => {
   levelBtn.addEventListener('click', (e) => {
+    if(e.target.id !== 'stage') return;
+    
     switch(e.target.dataset.level) {
       case '1':
         carrot__count = 10
         bug__count = 10
+        fire__count = 0
         game__duration__sec = 10
         break
       case '2':
          carrot__count = 10
          bug__count = 10
+         fire__count = 0
          game__duration__sec = 7
          break
       case '3':
         carrot__count = 15
         bug__count = 15
+        fire__count = 0
         game__duration__sec = 10
         break
       case '4':
         carrot__count = 20
         bug__count = 20
+        fire__count = 1
+        game__duration__sec = 10
+        break
+      case '5':
+        carrot__count = 20
+        bug__count = 20
+        fire__count = 2
+        game__duration__sec = 10
+        break
+      case '6':
+        carrot__count = 20
+        bug__count = 20
+        fire__count = 3
         game__duration__sec = 10
         break
     }
@@ -77,6 +97,7 @@ function startGame() {
   showTimerAndScore();
   startGameTimer();
   playSound(bgSound);
+  // fireAutoMove();
 }
 
 function stopGame() {
@@ -167,6 +188,7 @@ function initGame() {
   // 벌레와 당근을 생성한뒤 field에 추가해줌
   addItem('carrot', carrot__count, 'img/carrot.png');
   addItem('bug', bug__count, 'img/bug.png');
+  addObstacle('fire', fire__count, 'img/fire.png');
 }
 
 function resetGame() {
@@ -191,6 +213,9 @@ function onFieldClick(event) {
   } else if (target.matches('.bug')) {
     finishGame(false);
   }
+  else if(target.matches('.fire')) {
+    finishGame(false);
+  }
 }
 
 function playSound(sound) {
@@ -208,16 +233,16 @@ function updateScoreBoard() {
 
 function addItem(className, count, imgPath) {
   const x1 = 0;
-  const y1 = 0;
-  const x2 = fieldRect.width - CARROT_SIZE;
-  const y2 = fieldRect.height - CARROT_SIZE;
+  const y1 = -70;
+  const x2 = fieldRect.width - ITEM__SIZE;
+  const y2 = 90
   for (let i = 0; i < count; i++) {
     const item = document.createElement('img');
     item.setAttribute('class', className);
     item.setAttribute('src', imgPath);
     item.style.position = 'absolute';
     const x = randomNumber(x1, x2);
-    const y = randomNumber(y1, y2);
+    const y = randomNumber(y2, y1);
     item.style.left = `${x}px`;
     item.style.top = `${y}px`;
     field.appendChild(item);
@@ -226,4 +251,34 @@ function addItem(className, count, imgPath) {
 
 function randomNumber(min, max) {
   return Math.random() * (max - min) + min;
+}
+
+function addObstacle(className, count, imgPath) {
+  let top = -70
+  let left = 0
+  for (let i = 0; i < count; i++) {
+    const item = document.createElement('img');
+    item.setAttribute('class', className);
+    item.setAttribute('src', imgPath);
+    item.style.position = 'absolute';
+    item.style.left = `${left}px`
+    item.style.top = `${top}px`
+    field.appendChild(item)
+    top += 80
+    left += 100
+    fireAutoMove(item,left)
+  }
+}
+
+function fireAutoMove(item, initialLeft) {
+  if(fire__count == 0)  return;
+  let left = initialLeft;
+  item.style.left = `${left}px`
+  fireLeft = setInterval(() => {
+    if(left >= 700) {
+      left = 0
+    }
+    left += 1
+    item.style.left = `${left}px`
+  }, 10)
 }
