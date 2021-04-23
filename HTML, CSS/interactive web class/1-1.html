@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Web</title>
+    <link rel = "stylesheet" href="style.css">
+    <style>
+        .box-container {
+        display: flex;
+        }
+
+        .box {
+        width: 100px;
+        height: 100px;
+        border: 2px solid black;
+        background: rgba(255, 255, 0, 0.7);
+
+        /* transition */
+        transition: 1s;
+        }
+        .box:hover {
+        /* transform */
+        transform: scale(2) rotate(15deg); /* 크기 증가, 돌리기 */
+        transform: skewY(-30deg); /* 비틀기 */
+        transform: translate(30px, 10px); /* 이동 */
+        transform: translateX(30px); /* x,y 따로 설정 가능*/
+        transform-origin: left top; /* 시작점 설정*/
+        transform-origin: 0% 0%; /* 숫자로도 가능 */
+        }
+
+    </style>
+<body>
+    <h1> CSS Transform</h1>
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit ratione exercitationem at quas? Quam voluptates libero at natus odit, tempore aperiam quaerat! Repellendus quo fugiat hic rem? Nam, rem odit.
+    </p>
+    <div class="box-container">
+        <div class="box">A</div>
+        <div class="box">B</div>
+        <div class="box">C</div>
+        <div class="box">D</div>
+        <div class="box">E</div>
+    </div>
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti ex magni eveniet quia dolor inventore voluptates architecto porro eius, esse molestiae, quae, aspernatur amet. Soluta voluptatem corrupti excepturi tenetur quas.
+    </p>
+</body>
+</html>
