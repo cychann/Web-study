@@ -1,2 +1,3 @@
-# Web Studying
-Space to practice while studying web
+# Studying
+
+Repository to study and post
