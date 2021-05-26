@@ -6,8 +6,25 @@ from bs4 import BeautifulSoup
 # 고칼로리 맛집 리스트
 
 
-def scrap_food_menu():
-    url = "https://www.mangoplate.com/top_lists/667_highcalorie"
+def scrap_food_menu(food_title):
+    if food_title == '화덕피자':
+        food_url = "1069_ovenpizza"
+    elif food_title == "초콜릿":
+        food_url = "AK5EOCH"
+    elif food_title == "삼겹살":
+        food_url = "3LKPM7A"
+    elif food_title == "제육볶음":
+        food_url = "768_jaeyuk"
+    elif food_title == "수제버거":
+        food_url = "2748_burger2021"
+    elif food_title == "파스타":
+        food_url = "M5Y1YKX"
+    elif food_title == "돈까스":
+        food_url = "1418_donkatsu"
+    elif food_title == "중식":
+        food_url = "2742_chinese2021"
+
+    url = "https://www.mangoplate.com/top_lists/{}".format(food_url)
     headers = {
         "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.150 Safari/537.36"}
     res = requests.get(url, headers=headers)
@@ -28,4 +45,5 @@ def scrap_food_menu():
 
 
 if __name__ == "__main__":
-    scrap_food_menu()
+    food_title = input()
+    scrap_food_menu(food_title)
