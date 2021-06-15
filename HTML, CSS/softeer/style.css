@@ -1,0 +1,45 @@
+li {
+  list-style: none;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #e1e1e1;
+}
+
+.nav_logo {
+  margin: 20px;
+}
+
+.nav_logo img {
+  width: 130px;
+  height: 24px;
+}
+
+.nav_menu {
+  display: flex;
+}
+
+.nav_menu li {
+  margin: 30px;
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.nav_user {
+  display: flex;
+  align-items: center;
+}
+
+.nav_user li {
+  margin: 5px;
+  font-weight: 350;
+  opacity: 0.5;
+}
+
+.join {
+  border-left: 2px solid #e1e1e1;
+  padding: 10px;
+}
