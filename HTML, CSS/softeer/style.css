@@ -43,3 +43,40 @@ li {
   border-left: 2px solid #e1e1e1;
   padding: 10px;
 }
+
+.home {
+  height: 980px;
+  background: url("img/background.png") center no-repeat;
+  background-size: 100% auto;
+  background-color: aliceblue;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 300px;
+}
+
+.text img {
+  width: 522px;
+  height: 140px;
+}
+
+.text_ment {
+  margin-top: 30px;
+}
+
+.more_btn {
+  background-color: #a384ff;
+  width: 120px;
+  height: 40px;
+  border-radius: 21.5px;
+  font-weight: 700;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 100px;
+}
