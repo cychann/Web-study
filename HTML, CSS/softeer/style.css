@@ -1,3 +1,7 @@
+* {
+  font-family: "Roboto", sans-serif;
+}
+
 li {
   list-style: none;
 }
@@ -79,4 +83,93 @@ li {
   align-items: center;
   justify-content: center;
   margin-top: 100px;
+}
+
+.main {
+  padding: 200px;
+}
+
+.about_top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.about_title img {
+  width: 300px;
+  height: 50px;
+  margin-bottom: 30px;
+}
+
+.para {
+  display: flex;
+  flex-direction: column;
+}
+
+.about_ment {
+  font-size: 17px;
+  line-height: 25px;
+}
+
+.detail_btn {
+  background-color: #a384ff;
+  width: 120px;
+  height: 40px;
+  border-radius: 21.5px;
+  font-weight: 700;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.detail_btn img {
+  margin: 5px;
+  width: 20px;
+  height: 20px;
+}
+
+.about_boxes {
+  margin-top: 70px;
+  display: flex;
+}
+
+.about_box {
+  background-color: #e1e1e1;
+  margin: 15px;
+  width: 288px;
+  height: 288px;
+  border: 1px solid #e3f2fd;
+  border-radius: 25px;
+}
+
+.ment_box {
+  margin-top: 100px;
+  margin-left: 26px;
+  margin-right: 26px;
+}
+
+.about_concept {
+  margin-bottom: 20px;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+#about_box1 {
+  background: url("img/icon1.png") 26px 28px no-repeat;
+  background-size: auto 51px;
+}
+
+#about_box2 {
+  background: url("img/icon2.png") 26px 28px no-repeat;
+  background-size: auto 51px;
+}
+
+#about_box3 {
+  background: url("img/icon3.png") 26px 28px no-repeat;
+  background-size: auto 51px;
+}
+
+#about_box4 {
+  background: url("img/icon4.png") 26px 28px no-repeat;
+  background-size: auto 51px;
 }
