@@ -259,3 +259,47 @@ li {
   height: 30px;
   margin-right: 10px;
 }
+
+.practice {
+  background: url("img/blog_background.png");
+  padding: 15px;
+  margin-top: 50px;
+}
+
+.practice_title img {
+  width: 400px;
+  height: 70px;
+  margin-top: 200px;
+  margin-bottom: 50px;
+}
+
+.practice_box img {
+  width: 382px;
+  height: 215px;
+}
+
+.stars img {
+  width: 18px;
+  height: 18px;
+}
+
+.practice_top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.practice_boxes {
+  display: flex;
+  flex-direction: row;
+}
+
+.practice_box {
+  margin-right: 25px;
+  background-color: white;
+}
+
+.practice_info {
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
